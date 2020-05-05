@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-3'></div>
+    <div class='col-6'>
+      <div class='container shadow'>
+        <div class='row'>
+          <div class='col-3'></div>
+          <div class='col-12 col-md-6 mt-3'>
+            <div class="card mt-5 shadow rounded">
+              <div class='card-body'>
+                <h5 class="card-title">
+                <a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></h5>
+                <i>{{ cliente.data_criacao }}</i>
+                <br>
+                <b>Modificado por: {{ cliente.autor.username }}</b>
+                <br>
+                
+                <b></b>
+                <hr>
+                <p class="card-text mt-2">{{ cliente.detalhes_cliente }}</p>
+                </div>
+            </div>
+          </div>
+          <div class='col-3'></div>
+        </div>
+      </div>
+    </div>s
+    <div class='col-3'></div>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

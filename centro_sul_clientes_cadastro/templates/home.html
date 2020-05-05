@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container shadow">
+	  	<div class="row">
+
+	  		<div class="col-3"></div>
+
+	  		<div class="col-12 col-md-6 mt-5">
+
+	  			{% for cliente in clientes %}
+				 <div class="card bg-white rounded mt-3" >
+					  <div class="card-body">
+					    <h5 class="card-title"><a href="{% url 'edit_cliente' pk=cliente.pk %}">Id: {{ cliente.pk}}<hr>{{ cliente.nome_cliente }}</a></h5>
+					    <i>{{cliente.data_criacao}} - Autor: {{cliente.autor.username}}</i>
+						<p class='card_text mt-3'> Detalhes/Whatsapp: {{ cliente.detalhes_cliente }}</p>
+                        <p class="card-text mt-2">{{cliente.status}}</p>
+
+					
+					  </div>
+				 </div>
+				 {% endfor %}
+
+		    </div>
+
+			<div class="col-3"></div>
+		</div>
+
+  	</div>
+
+{% endblock %}
