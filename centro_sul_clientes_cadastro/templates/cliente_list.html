@@ -6,13 +6,14 @@
     <div class='row'>
         <div class='col-3'></div>
         <div class='col-6'>
-            <table class="table table-bordered table-dark mt-4">
+            <table class="table table-bordered table-striped table-dark mt-4">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Status</th>
                         <th scope="col">Detalhes</th>
+                        <th scope="col">Cidade / Logradouro</th>
                     </tr>
                 </thead>
             
@@ -23,6 +24,7 @@
                         <td><a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></td>
                         <td>{{ cliente.status }}</td>
                         <td>{{ cliente.detalhes_cliente }}</td>
+                        <td>{{ cliente.reg }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -12,16 +12,22 @@
             <div class="card mt-5 shadow rounded">
               <div class='card-body'>
                 <h5 class="card-title">
-                <a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></h5>
-                <i>{{ cliente.data_criacao }}</i>
-                <br>
-                <b>Modificado por: {{ cliente.autor.username }}</b>
-                <br>
-                
-                <b></b>
+                  <a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></h5>
                 <hr>
-                <p class="card-text mt-2">{{ cliente.detalhes_cliente }}</p>
-                </div>
+                <sup><small><b>Modificado por:</b>{{cliente.autor.username}}, no dia: {{ cliente.data_edit }} </b></small></sup>
+                <br>
+                <b>Telefone:</b> {{ cliente.telefone }}</b><br>
+                <br>
+                <b>Reside em:</b> {{ cliente.regiao_cliente }}</b><br>
+                <br> 
+                <p><b>Descrição:</b> {{ cliente.detalhes_cliente }}</p>
+                <hr>
+                <b>Anotações Denis: </b>{{ cliente.condicoes_atendimento }}</b><br><br>
+                <br>
+                <b>Avaliação:</b> {{ cliente.avaliacao_localizacao }}</b><br>
+                <hr>
+                <p><b>Status: </b>{{ cliente.status }}</p>
+              </div>
             </div>
           </div>
           <div class='col-3'></div>
