@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Cliente
 from django.utils import timezone
 from django.shortcuts import redirect, get_object_or_404
-from .forms import PostForm
+from .forms import PostForm, PostFormEdit
 from django.views.generic.list import ListView
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
@@ -18,10 +18,11 @@ class ClienteListView(ListView):
 
     def get_queryset(self):
         queryset = Cliente.objects.all()
+
         if self.request.GET.get('nome_cliente'):
             queryset = queryset.filter(nome_cliente__icontains=self.request.GET.get('nome_cliente'))
 
-        return queryset.order_by('-data_criacao')
+        return queryset.order_by('-status')
 
     def get_context_data(self, **kwargs):
         context = super(ClienteListView, self).get_context_data(**kwargs)
@@ -56,7 +57,7 @@ def detalhe_cliente(request, pk):
 def adicionar_cliente(request):
     #Quando para salvar
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostFormEdit(request.POST)
         if form.is_valid():
             cliente = form.save(commit=False)
             cliente.save()
@@ -71,7 +72,7 @@ def adicionar_cliente(request):
 def editar_cliente(request, pk):
     cliente = get_object_or_404(Cliente, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=cliente)
+        form = PostFormEdit(request.POST, instance=cliente)
         if form.is_valid():
             cliente = form.save(commit=False)
             
@@ -79,7 +80,7 @@ def editar_cliente(request, pk):
             return redirect('home')
     else:
 
-        form = PostForm(instance=cliente)
+        form = PostFormEdit(instance=cliente)
 
     return render(request, 'edit_cliente.html', {'form':form})
 
@@ -87,4 +88,3 @@ def editar_cliente(request, pk):
 def lista_cliente(request):
 
     return render(request, 'cliente_list.html')   
-
