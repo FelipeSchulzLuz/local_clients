@@ -6,8 +6,8 @@
     <div class='row'>
         <div class='col-3'></div>
         <div class='col-6'>
-            <table class="table table-bordered table-striped table-dark mt-4">
-                <thead class="thead-dark">
+            <table class="table table-sm table-bordered table-striped table-light mt-4">
+                <thead class="thead-light">
                     <tr>
                         <th scope="col"><a href=''>ID</th>
                         <th scope="col"><a href=''>Nome</a></th>
@@ -18,14 +18,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for cliente in clientes %}
-                    <tr>                    
+                    {% for cliente in clientes %}                 
                         <th scope="row">{{ cliente.pk }}</th>
                         <td><a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></td>
                         <td><a href=''>{{ cliente.status }}</a></td>
-                        <td><a href=''>{{ cliente.condicao_atendimento }}</a></td>
+                        <td>{{ cliente.condicao_atendimento }}</td>
                         <td><a href=''>{{ cliente.regiao_cliente }}</a></td>
-                        <td><a href=''>{{{ cliente.telefone }}</a></td>
+                        <td>{{ cliente.telefone }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

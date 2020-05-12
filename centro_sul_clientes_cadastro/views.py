@@ -43,7 +43,7 @@ class ClienteListView(ListView):
 
 
 def index(request):
-    clientes = Cliente.objects.all().order_by("-status")
+    clientes = Cliente.objects.all().order_by('status')
     return render(request, 'index.html', {'clientes': clientes})
 
 

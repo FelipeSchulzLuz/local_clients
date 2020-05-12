@@ -13,15 +13,17 @@
               <div class='card-body'>
                 <h5 class="card-title"><a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a>
                 </h5>
+                <p>
                 <hr><br>
                 <b>Telefone:</b> {{ cliente.telefone }}</b><br>
                 <b>Reside em:</b> {{ cliente.regiao_cliente }}</b><br>
-                <p><b>Descrição:</b> {{ cliente.detalhes_cliente }}</p><br>
+                <b>Descrição:</b> {{ cliente.detalhes_cliente }}<br>
                 <b>Anotações Denis: </b>{{ cliente.condicao_atendimento }}</b><br>
                 <b>Avaliação:</b> {{ cliente.avaliacao_localizacao }}</b><br>
                 <hr>
-                <p><b>Status Geral: </b>{{ cliente.status }}</p>
+                <b>Status Geral: </b>{{ cliente.status }}</p>
                 <sup><small><b>Modificado por:</b>{{cliente.autor.username}}, no dia: {{ cliente.data_edit }}
+                </p>
                     </b></small></sup>
               </div>
             </div>

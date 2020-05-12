@@ -1,36 +1,74 @@
 
+  
+a:hover {
+  text-decoration: none;
+}
 
 body {
     font-family: Arial;
     background: linear-gradient(90deg, rgba(0,32,64,1) 0%, rgba(0,64,128,1)35%, rgba(0,127,255,1) 64%, rgb(49, 150, 250) 100%);
-    text-align: center;
-  }
-  
+    height: 100vh;
+    background-size: auto, 100vh;
+} 
+
+.button-add {
+	box-shadow:inset 0px 1px 0px 0px #54a3f7;
+	background:linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+	background-color:#007dc1;
+	border-radius:3px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:10px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #154682;
+}
+.button-add:hover {
+	background:linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+	background-color:#0061a7;
+}
+.button-add:active {
+	position:relative;
+	top:1px;
+}
+
   
 .menu li {
-    list-style: none;
-  }
+  list-style: none;
+}
   
-.menu ul {
-    display:flex;
-    justify-content: space-around;
-  }
-  
-  
-.a {
-    color: rgb(5, 16, 112);
-    text-decoration: none;
-  }
-  
-a:hover {
-    text-decoration: underline;
-  }
-  
+    
+.container-fluid {
+  border-collapse: collapse;
+  overflow-x:auto;  
+}
+
 ul.square {
-	list-style-type: square;
-  }
-  
+  list-style-type: square;
+}
+
+.navbar-brand {
+  color: whitesmoke;
+  text-align: center;
+}
 
 .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
   box-sizing: content-box;
-  }
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
