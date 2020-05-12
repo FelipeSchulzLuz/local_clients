@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 <div class='container-fluid'>
   <div class='row'>
@@ -11,22 +11,18 @@
           <div class='col-12 col-md-6 mt-3'>
             <div class="card mt-5 shadow rounded">
               <div class='card-body'>
-                <h5 class="card-title">
-                  <a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></h5>
-                <hr>
-                <sup><small><b>Modificado por:</b>{{cliente.autor.username}}, no dia: {{ cliente.data_edit }} </b></small></sup>
-                <br>
+                <h5 class="card-title"><a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a>
+                </h5>
+                <hr><br>
                 <b>Telefone:</b> {{ cliente.telefone }}</b><br>
-                <br>
                 <b>Reside em:</b> {{ cliente.regiao_cliente }}</b><br>
-                <br> 
-                <p><b>Descrição:</b> {{ cliente.detalhes_cliente }}</p>
-                <hr>
-                <b>Anotações Denis: </b>{{ cliente.condicoes_atendimento }}</b><br><br>
-                <br>
+                <p><b>Descrição:</b> {{ cliente.detalhes_cliente }}</p><br>
+                <b>Anotações Denis: </b>{{ cliente.condicao_atendimento }}</b><br>
                 <b>Avaliação:</b> {{ cliente.avaliacao_localizacao }}</b><br>
                 <hr>
-                <p><b>Status: </b>{{ cliente.status }}</p>
+                <p><b>Status Geral: </b>{{ cliente.status }}</p>
+                <sup><small><b>Modificado por:</b>{{cliente.autor.username}}, no dia: {{ cliente.data_edit }}
+                    </b></small></sup>
               </div>
             </div>
           </div>
@@ -39,4 +35,5 @@
 </div>
 </div>
 </div>
+
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-
-{% block content %}
 {% load static %}
+{% block content %}
+
 <div class='container-fluid'>
     <div class='row'>
         <div class='col-3'></div>
@@ -23,8 +23,8 @@
                         <th scope="row">{{ cliente.pk }}</th>
                         <td><a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></td>
                         <td><a href=''>{{ cliente.status }}</a></td>
-                        <td><a href=''>{{{ cliente.condicao_atendimento }}</a></td>
-                        <td><a href=''>{{{ cliente.regiao_cliente }}</a></td>
+                        <td><a href=''>{{ cliente.condicao_atendimento }}</a></td>
+                        <td><a href=''>{{ cliente.regiao_cliente }}</a></td>
                         <td><a href=''>{{{ cliente.telefone }}</a></td>
                     </tr>
                     {% endfor %}

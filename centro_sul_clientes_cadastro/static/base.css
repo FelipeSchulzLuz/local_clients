@@ -1,0 +1,36 @@
+
+
+body {
+    font-family: Arial;
+    background: linear-gradient(90deg, rgba(0,32,64,1) 0%, rgba(0,64,128,1)35%, rgba(0,127,255,1) 64%, rgb(49, 150, 250) 100%);
+    text-align: center;
+  }
+  
+  
+.menu li {
+    list-style: none;
+  }
+  
+.menu ul {
+    display:flex;
+    justify-content: space-around;
+  }
+  
+  
+.a {
+    color: rgb(5, 16, 112);
+    text-decoration: none;
+  }
+  
+a:hover {
+    text-decoration: underline;
+  }
+  
+ul.square {
+	list-style-type: square;
+  }
+  
+
+.card {
+  box-sizing: content-box;
+  }
