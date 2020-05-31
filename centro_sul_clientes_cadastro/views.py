@@ -42,9 +42,9 @@ class ClienteListView(ListView):
     
 
 
-def home(request):
-    clientes = Cliente.objects.all().order_by("-data_criacao")
-    return render(request, 'home.html', {'clientes': clientes})
+def index(request):
+    clientes = Cliente.objects.all().order_by("-status")
+    return render(request, 'index.html', {'clientes': clientes})
 
 
 
@@ -61,7 +61,7 @@ def adicionar_cliente(request):
         if form.is_valid():
             cliente = form.save(commit=False)
             cliente.save()
-            return redirect('home')
+            return redirect('index')
     else:
 
         form = PostForm() 
@@ -77,7 +77,7 @@ def editar_cliente(request, pk):
             cliente = form.save(commit=False)
             
             cliente.save()
-            return redirect('home')
+            return redirect('index')
     else:
 
         form = PostFormEdit(instance=cliente)
