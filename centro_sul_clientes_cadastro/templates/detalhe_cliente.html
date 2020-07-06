@@ -1,42 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class='container-fluid'>
-  <div class='row'>
-    <div class='col-3'></div>
-    <div class='col-6'>
-      <div class='container shadow'>
-        <div class='row'>
-          <div class='col-3'></div>
-          <div class='col-12 col-md-6 mt-3'>
-            <div class="card mt-5 shadow rounded">
-              <div class='card-body'>
-                <h5 class="card-title">
-                  <a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></h5>
-                <hr>
-                <sup><small><b>Modificado por:</b>{{cliente.autor.username}}, no dia: {{ cliente.data_edit }} </b></small></sup>
-                <br>
-                <b>Telefone:</b> {{ cliente.telefone }}</b><br>
-                <br>
-                <b>Reside em:</b> {{ cliente.regiao_cliente }}</b><br>
-                <br> 
-                <p><b>Descrição:</b> {{ cliente.detalhes_cliente }}</p>
-                <hr>
-                <b>Anotações Denis: </b>{{ cliente.condicoes_atendimento }}</b><br><br>
-                <br>
-                <b>Avaliação:</b> {{ cliente.avaliacao_localizacao }}</b><br>
-                <hr>
-                <p><b>Status: </b>{{ cliente.status }}</p>
-              </div>
-            </div>
-          </div>
-          <div class='col-3'></div>
-        </div>
+<!-- <div class="container"> -->
+  <div class="card">
+    <h2>Id: {{ cliente.pk}}</h2>
+    <div class='card-body'>
+      <div class="card-header">
+        <h2><a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></h2>
       </div>
-    </div>s
-    <div class='col-3'></div>
+      <div class="card-detail">
+        <p>Localidade: {{cliente.regiao_cliente}}</p>
+      </div>
+      <div class="card-detail">
+        <p>Telefone: {{ cliente.telefone }}</p>
+      </div>
+      <div class="card-text">
+        <p>Descrição: {{ cliente.detalhes_cliente }} </p>
+      </div>
+      <div class="card-text">
+        <p>Anotações Avaliador: {{ cliente.condicoes_atendimento }}</p>
+      </div>
+      <div class="card-status">
+        <spam>Resposta Avaliador: {{ cliente.avaliacao_localizacao }}</spam>
+      </div>
+      <div class="card-status">
+        <spam>Status: {{ cliente.status }}</spam>
+      </div>
+    </div>
+    <div class="card-edit">
+      <p>Ultima edição: {{cliente.data_edit}} por: {{cliente.autor.username}}</p>
+    </div>
   </div>
 </div>
-</div>
-</div>
+
 {% endblock %}

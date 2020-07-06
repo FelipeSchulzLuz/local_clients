@@ -5,7 +5,7 @@ from .models import Cliente
 class PostForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ('nome_cliente', 'telefone', 'detalhes_cliente', 'autor', 'status','regiao_cliente')
+        fields = ('nome_cliente', 'telefone', 'detalhes_cliente', 'autor','regiao_cliente')
 
         
 

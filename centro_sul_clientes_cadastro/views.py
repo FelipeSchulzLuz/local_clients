@@ -57,7 +57,7 @@ def detalhe_cliente(request, pk):
 def adicionar_cliente(request):
     #Quando para salvar
     if request.method == 'POST':
-        form = PostFormEdit(request.POST)
+        form = PostForm(request.POST)
         if form.is_valid():
             cliente = form.save(commit=False)
             cliente.save()
