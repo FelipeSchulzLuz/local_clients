@@ -42,14 +42,11 @@
     </nav>
     <aside class="autenticacao">
       <a href="#login">Login</a>
-      <a href="#registar" class="botao destaque">Registrar</a>
+      <a href="#registrar" class="botao destaque">Registrar</a>
     </aside>
   </header>
-  <div class="conteudo">
-    {% block content %}
-
-    {% endblock%}
-  </div>
+  {% block content %}
+  {% endblock%}
   <footer class="rodape"></footer>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

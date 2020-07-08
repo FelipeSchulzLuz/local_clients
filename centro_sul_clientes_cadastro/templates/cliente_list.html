@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-
 {% block content %}
 {% load static %}
+<div class="container-left"></div>
+<div class="container-center">
     <table class="table">
         <thead class="table-head">
             <tr>
@@ -17,11 +18,13 @@
             <tr>
                 <th class="th-id" scope="row">{{ cliente.pk }}</th>
                 <td class="td-name"><a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></td>
-                <td>{{ cliente.status }}</td>
+                <td class="td-status">{{ cliente.status }}</td>
                 <td class="td-detalhes">{{ cliente.detalhes_cliente }}</td>
                 <td class="td-city">{{ cliente.regiao_cliente }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+</div>
+<div class="container-right"></div>
 {% endblock %}

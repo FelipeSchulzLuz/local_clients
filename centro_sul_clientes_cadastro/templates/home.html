@@ -1,41 +1,45 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-	{% for cliente in clientes %}
-	<div class="card">
-		<h2>Id: {{ cliente.pk}}</h2>
-		<div class='card-body'>
-			<div class="card-header">
-				<h2><a href="{% url 'edit_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></h2>
+<div class="container-left"></div>
+<div class="container-center">
+	<div class="container-row">
+		{% for cliente in clientes %}
+		<div class="card">
+			<h2>Id: {{ cliente.pk }}</h2>
+			<div class='card-body'>
+				<div class="card-header">
+					<h2><a href="{% url 'detalhe_cliente' pk=cliente.pk %}">{{ cliente.nome_cliente }}</a></h2>
+				</div>
+				<!-- <div class="card-detail">
+					<p>Localidade:</p>
+					<h3>{{cliente.regiao_cliente}}</h3>
+					<p>Telefone:</p>
+					<h3>{{ cliente.telefone }}</h3>
+				</div>
+				<div class="card-text">
+					<p>Descrição:</p>
+					<h3>{{ cliente.detalhes_cliente }} </h3>
+				</div> -->
+				<div class="card-text">
+					<p>Anotações Avaliador:</p>
+					<h3>{{ cliente.condicoes_atendimento }}</h3>
+				</div>
+				<div class="card-status">
+					<spam>
+						<p>Resposta Avaliador:</p>
+						<h3> {{ cliente.avaliacao_localizacao }}</h3>
+				</div>
+				<div class="card-status">
+					<p>Status:</p>
+					<h3>{{ cliente.status }}</h3>
+				</div>
 			</div>
-			<div class="card-detail">
-				<p>Localidade:</p> {{cliente.regiao_cliente}}</h3>
-			</div>
-			<div class="card-detail">
-				<p>Telefone:</p> {{ cliente.telefone }}</h3>
-			</div>
-			<div class="card-text">
-				<p>Descrição:</p>
-				<h3> {{ cliente.detalhes_cliente }} </h3>
-			</div>
-			<div class="card-text">
-				<p>Anotações Avaliador:</p>
-				<h3>{{ cliente.condicoes_atendimento }}</h3>
-			</div>
-			<div class="card-status">
-				<spam>Resposta Avaliador:</spam>
-				<h3> {{ cliente.avaliacao_localizacao }}</h3>
-			</div>
-			<div class="card-status">
-				<spam>Status:</spam>
-				<h3>{{ cliente.status }}</h3>
+			<div class="card-edit">
+				<p>Ultima edição:{{ cliente.data_edit }} por: {{ cliente.autor.username }}</p>
 			</div>
 		</div>
-		<div class="card-edit">
-			<p>Ultima edição:{{cliente.data_edit}} por: {{cliente.autor.username}}</p>
-		</div>
+		{% endfor %}
 	</div>
-	{% endfor %}
-
-{% endblock %}
+</div>
+	<div class="container-right"></div>
+	{% endblock %}
