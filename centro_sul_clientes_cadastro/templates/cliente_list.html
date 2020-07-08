@@ -6,14 +6,14 @@
     <table class="table">
         <thead class="table-head">
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Status</th>
-                <th scope="col">Detalhes</th>
-                <th scope="col">Cidade / Logradouro</th>
+                <th class="th-id" scope="col">ID</th>
+                <th class="th-name" scope="col">Nome</th>
+                <th class="th-status" scope="col">Status</th>
+                <th class="th-detalhes" scope="col">Detalhes</th>
+                <th class="th-city" scope="col">Cidade / Logradouro</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table-body">
             {% for cliente in clientes %}
             <tr>
                 <th class="th-id" scope="row">{{ cliente.pk }}</th>

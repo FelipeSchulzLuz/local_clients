@@ -90,5 +90,5 @@ def lista_cliente(request):
     def get_queryset(self):
         return super(lista_cliente,self).get_queryset().filter(status='condicao_atendimento')
     def get_absolute_url(self):
-        return reverse('blog:cliente_list', args=[self.publish.year, self.publish.month, self.publish.day, slugify(self.slug)])
+        return reverse('centro_sul_clientes_cadastro:cliente_list', args=[self.publish.year, self.publish.month, self.publish.day, slugify(self.slug)])
     return render(request, 'cliente_list.html')   

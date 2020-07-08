@@ -1,3 +1,5 @@
+/*////////////////// GLOBAL /////////////////////*/
+
 * {
     padding: 0;
     margin: 0;
@@ -19,34 +21,21 @@ body {
     'container-left container-center container-right'
     'rodape rodape rodape';
 }
-#save-btn {
-    margin-top: 40px;
-    align-self: center;
-    justify-self: center;
-    background: #3498db;
-    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-    background-image: -o-linear-gradient(top, #3498db, #2980b9);
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 28px;
-    color: #fff;
-    font-size: 1.3em;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-  }
-  
-.btn:hover {
-    background: #00A6F4;
-    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-    text-decoration: none;
-  }
+
+.textarea {
+    box-sizing: content-box;
+    min-width: 300px;
+    max-height: 80px;
+	min-height: 30px;
+	border: 1px solid #cccccc;
+	padding: 35px;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+/*////////////////// HEADER /////////////////////*/
+
 .cabecalho {
     grid-area: cabecalho;
     background: #093164;
@@ -67,6 +56,10 @@ body {
     padding: 10px 25px;
     margin-right: 10px;
 }
+
+
+/*////////////////// CARD CONFIG /////////////////////*/
+
 .card,
 .card-big {
     background-color: rgb(255, 255, 255);
@@ -148,6 +141,42 @@ body {
 .card-text h3 {
     color: grey;
 }
+
+
+/*////////////////// BUTTON /////////////////////*/
+
+#save-btn {
+    margin-top: 40px;
+    align-self: center;
+    justify-self: center;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+.btn:hover {
+    background: #00A6F4;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+
+/*////////////////// BASE CONFIGS /////////////////////*/
+
 .container-center,
 .container-left,
 .container-right {
@@ -167,6 +196,10 @@ body {
     align-items: center;
     column-gap: 200px;
 }
+
+
+/*////////////////// MAIN MENU /////////////////////*/
+
 .destaque {
     background: #f50a31;
     color: #fff;
@@ -179,12 +212,7 @@ body {
     -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1); 
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.1);
 }
-footer {
-    border-top:solid 5px;
-    border-color: #3d4f73;
-    grid-area: rodape;
-    background: #01102d;
-}
+
 .logo img {
     height: 50px;
 }
@@ -205,6 +233,10 @@ footer {
     text-decoration: none;
     color: #13efff;
 }
+
+
+/*////////////////// POST-FORM /////////////////////*/
+
 .post-form {
     min-height: 650px;
     min-width: 550;
@@ -223,50 +255,72 @@ footer {
     padding: 5px;
     height: 150px;
 }
-.rodape {
+
+
+/*////////////////// RODAPE /////////////////////*/
+
+footer {
+    border-top:solid 5px;
+    border-color: #3d4f73;
     grid-area: rodape;
+    background: #01102d;
 }
 
+
+/*////////////////// TABLE /////////////////////*/
+
 .table {
+    font-size: 1.3em;
+    border:hidden;
     text-align: center;
     color: black;
     background-color: rgb(240, 240, 240);
-    border: solid 3px black;
     align-self: flex-start;
+
 }
-.table thead th {
-    min-width: 300px;
-    text-align: center;
-    border: solid 1px rgb(59, 59, 59);
-}
-.table-head {
-    background-color: rgb(54, 54, 54);
-    color:#fff;
-    border-bottom: solid 3px black;
-}
-.td-name, .td-detalhes, .td-name {
-    min-width: 600px;
-}
-.td-name a {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;    
-}
-tbody .th-id {
-    background-color:rgb(54, 54, 54) ;
-    border: solid 1px black;
+.table th {
+    background-color: rgb(56, 56, 56);
     color: #fff;
 }
 
-.textarea {
-    box-sizing: content-box;
-    min-width: 300px;
-    max-height: 80px;
-	min-height: 30px;
-	border: 1px solid #cccccc;
-	padding: 35px;
-	font-family: Tahoma, sans-serif;
-	background-position: bottom right;
-	background-repeat: no-repeat;
+.table-head {
+    border:hidden;
+    background-color: rgb(56, 56, 56);
+    color: #fff;
+    font-size: 1.4em;
+    text-align: center;
+}
+.table-body {
+    border:hidden;
+}
+.table-body > tr, td, th { 
+    height: 75px;
+    width: auto;
+    justify-items: center;
+    border:hidden;
+}
+
+.table-body .th-id {
+    max-width: 80px;
+}
+.table tbody th,
+.table tbody td,
+.table tbody tr,
+.table thead th {
+    vertical-align: middle;
+    border: solid 1px black;
+}
+
+.table thead .th-name,
+.table thead .th-status,
+.table thead .th-city {
+    min-width: 450px;
+}
+.table thead .th-detalhes {
+    min-width: 900px;
+}
+.table-body > tr > .td-status {
+    color: red;
+    font-weight: bold;
+    
 }
